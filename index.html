@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Project Name Generator</title>
+  <script>
+    const adjectives = ["supreme", "specter", "mighty", "cosmic", "eternal", "ancient", "mystic", "sublime", "primal", "astral"];
+    const nouns = ["wetland", "stone", "cavern", "nebula", "abyss", "cosmos", "galaxy", "vortex", "ether", "realm"];
+    const verbs = ["pondering", "falling", "rising", "soaring", "ascending", "transcending", "evolving", "dreaming", "awakening", "echoing"];
+
+    function generateRandomProjectName() {
+      const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+      const noun = nouns[Math.floor(Math.random() * nouns.length)];
+      const verb = verbs[Math.floor(Math.random() * verbs.length)];
+      const number = Math.floor(Math.random() * 900) + 100;
+      const randomText = Math.random().toString(36).substring(2, 8);
+
+      return `${adjective}-${noun}-${verb}-${number}-${randomText}`;
+    }
+
+    function displayRandomProjectName() {
+      const projectNameElement = document.getElementById('project-name');
+      projectNameElement.textContent = generateRandomProjectName();
+    }
+
+    window.onload = displayRandomProjectName;
+  </script>
+</head>
+<body>
+  <h1>Random Project Name Generator</h1>
+  <p id="project-name"></p>
+</body>
+</html>
